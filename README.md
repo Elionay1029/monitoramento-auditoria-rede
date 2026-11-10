@@ -2,7 +2,7 @@
 
 Ferramenta de linha de comando para inventariar portas TCP, comparar o resultado com uma baseline e analisar arquivos PCAP com Scapy. Os achados incluem evidências e sugestões de mitigação, com relatórios em HTML, Markdown, JSON e CSV.
 
-**Projeto pessoal de portfólio criado em 2026.** A demonstração usa inventário e pacotes **100% fictícios**, incluídos no repositório. Ela permite conhecer o fluxo sem acessar uma rede real.
+**Projeto pessoal de portfólio criado em 2026.** A demonstração usa inventário e pacotes, incluídos no repositório. Ela permite conhecer o fluxo sem acessar uma rede real.
 
 ## Funcionalidades
 
