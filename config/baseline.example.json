@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "network": "192.168.56.0/24",
+  "hosts": {
+    "192.168.56.1": {
+      "allowed_tcp_ports": [22, 443]
+    },
+    "192.168.56.2": {
+      "allowed_tcp_ports": [443]
+    }
+  }
+}

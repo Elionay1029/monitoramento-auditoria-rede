@@ -1,0 +1,2 @@
+# Versao usada na validacao local: Python 3.12, Windows x64.
+scapy==2.8.0

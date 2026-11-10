@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+config/*.local.json
+reports/
+captures/
+.scratch/
+*.pcap
+*.pcapng
+!data/demo/traffic_demo.pcap
+*.log
+.idea/
+.vscode/

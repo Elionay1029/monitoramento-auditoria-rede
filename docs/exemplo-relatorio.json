@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10T21:37:57.189405+00:00",
+  "mode": "synthetic_demo",
+  "network": "192.168.56.0/24",
+  "pcap_scope": "entire_capture",
+  "snapshot_generated_at": "2026-01-01T00:00:00+00:00",
+  "summary": {
+    "hosts_scanned": 4,
+    "hosts_responsive": 3,
+    "open_ports": 5,
+    "findings_total": 5,
+    "packets_analyzed": 16,
+    "by_severity": {
+      "high": 1,
+      "medium": 3,
+      "low": 1,
+      "info": 0
+    }
+  },
+  "findings": [
+    {
+      "id": "PORT_SCAN_PATTERN",
+      "severity": "high",
+      "title": "Indício de varredura TCP SYN",
+      "evidence": "Origem 192.168.56.99 para destino 192.168.56.1: 12 portas de destino únicas em pacotes SYN sem ACK (20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31), entre 2026-01-01T00:00:00.000000Z e 2026-01-01T00:00:11.000000Z, dentro de uma janela de 60 segundos.",
+      "recommendation": "Verificar se a origem pertence a uma ferramenta de monitoramento ou teste autorizada; correlacionar os horários com os registros de firewall antes de concluir que há atividade indevida.",
+      "source": "pcap",
+      "host": "192.168.56.99"
+    },
+    {
+      "id": "UNEXPECTED_OPEN_PORT",
+      "severity": "medium",
+      "title": "Porta aberta fora da referencia",
+      "host": "192.168.56.1",
+      "source": "inventory",
+      "evidence": "Portas TCP abertas que nao estao na baseline: [23].",
+      "recommendation": "Confirme a finalidade dos servicos; desative os desnecessarios ou restrinja o acesso por firewall e atualize a referencia apos revisao."
+    },
+    {
+      "id": "ARP_IP_CONFLICT",
+      "severity": "medium",
+      "title": "IP anunciado por múltiplos endereços MAC",
+      "evidence": "O IP 192.168.56.2 foi anunciado por 2 MACs distintos: 02:00:00:00:00:20, 02:00:00:00:00:21, entre 2026-01-01T00:00:20.000000Z e 2026-01-01T00:00:21.000000Z. Pode haver IP duplicado, mudança legítima de equipamento ou outra inconsistência; o achado não confirma ataque.",
+      "recommendation": "Conferir o inventário, as concessões DHCP e os equipamentos envolvidos; investigar duplicidade de IP e mudanças de interface antes de aplicar medidas de contenção.",
+      "source": "pcap",
+      "host": "192.168.56.2"
+    },
+    {
+      "id": "HOST_NOT_IN_BASELINE",
+      "severity": "medium",
+      "title": "Host observado fora da referencia",
+      "host": "192.168.56.99",
+      "source": "inventory",
+      "evidence": "O host respondeu a TCP e nao consta na baseline. Portas abertas: [8080].",
+      "recommendation": "Confirme a identidade e a autorizacao do equipamento no inventario; considere mudancas legitimas de DHCP antes de agir."
+    },
+    {
+      "id": "LEGACY_SERVICE_PORT",
+      "severity": "low",
+      "title": "Revisar portas associadas a protocolos legados",
+      "host": "192.168.56.1",
+      "source": "inventory",
+      "evidence": "Portas abertas: [23]. O numero da porta sugere um servico, mas nao comprova protocolo ou ausencia de TLS.",
+      "recommendation": "Identifique o servico de fato e confira criptografia, autenticacao e necessidade de exposicao; prefira alternativas protegidas quando aplicavel."
+    }
+  ],
+  "pcap_summary": {
+    "schema_version": 1,
+    "packets_total": 16,
+    "protocol_counts": {
+      "TCP": 13,
+      "UDP": 1,
+      "ARP": 2,
+      "OTHER": 0
+    },
+    "ips_observed": [
+      "192.168.56.1",
+      "192.168.56.2",
+      "192.168.56.3",
+      "192.168.56.99"
+    ]
+  }
+}
