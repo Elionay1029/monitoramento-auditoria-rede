@@ -75,7 +75,7 @@ Para abrir o relatório no Windows:
 Invoke-Item reports/demo/relatorio.html
 ```
 
-### O que existe nos dados fictícios
+### O que existe nos dados 
 
 O snapshot representa quatro hosts consultados: três respondem e somam cinco portas TCP abertas. A baseline contém dois hosts conhecidos. A massa foi construída para demonstrar estes achados:
 
